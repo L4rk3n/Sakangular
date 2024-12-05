@@ -1,0 +1,29 @@
+.bubble {
+    border: 5px solid rgb(241, 8, 144);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    background-color: white;
+    color: black;
+    transition: transform 0.3s ease;
+    flex: 1 1 calc(10% - 5px); 
+    box-sizing: border-box;
+    
+}
+.illustration {
+    border: 5px solid rgb(43, 42, 42);
+    border-radius: 15px;
+
+    background-color: rgb(241, 8, 144);
+    color: black;
+    transition: transform 0.3s ease;
+    flex: 1 1 calc(10% - 5px); 
+    box-sizing: border-box;
+}
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}

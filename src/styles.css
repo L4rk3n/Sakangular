@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+app-root {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    background-color:rgb(43, 42, 42); ;
+}
+body {
+    background-color:rgb(43, 42, 42); ;
+}
