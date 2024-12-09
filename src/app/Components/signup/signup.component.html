@@ -1,0 +1,97 @@
+ <div class="add-book-container">
+
+  <h2>Création de votre profil </h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" formControlName="nom" name="nom">
+      <div *ngIf="form.get('nom')?.errors">
+        {{ form.get('nom')?.errors | json }}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" formControlName="prenom" name="prenom">
+      <div *ngIf="form.get('prenom')?.errors">
+        {{ form.get('prenom')?.errors | json }}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email :</label>
+      <input type="email" id="email" formControlName="email" name="email">
+      <div *ngIf="form.get('email')?.errors">
+        {{ form.get('email')?.errors | json }}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Mot de passe :</label>
+      <input type="password" id="password" formControlName="password" name="password">
+      <div *ngIf="form.get('password')?.errors">
+        {{ form.get('password')?.errors | json }}
+      </div>
+    </div>  
+
+    <div class="form-group">
+      <label for="phonenumber">Telephone :</label>
+      <input type="text" id="phonenumber" formControlName="phonenumber" name="phonenumber">
+      <div *ngIf="form.get('phonenumber')?.errors">
+        {{ form.get('phonenumber')?.errors | json }}
+      </div>
+    </div>
+
+    <div class="form-group">    
+      <label for="AdresseRue">Rue :</label>
+      <input type="text" id="AdresseRue" formControlName="AdresseRue" name="AdresseRue">   
+      <div *ngIf="form.get('AdresseRue')?.errors">
+        {{ form.get('AdresseRue')?.errors | json }} 
+      </div>
+    </div>          
+
+    <div class="form-group">
+      <label for="AdresseNumero">Numero de rue :</label>
+      <input type="text" id="AdresseNumero" formControlName="AdresseNumero" name="AdresseNumero">
+      <div *ngIf="form.get('AdresseNumero')?.errors">
+        {{ form.get('AdresseNumero')?.errors | json }}
+      </div>
+    </div>
+
+    <div class="form-group">  
+      <label for="AdresseCodePostal">Code postal :</label>
+      <input type="text" id="AdresseCodePostal" formControlName="AdresseCodePostal" name="AdresseCodePostal">
+      <div *ngIf="form.get('AdresseCodePostal')?.errors">
+        {{ form.get('AdresseCodePostal')?.errors | json }}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="AdresseVille">Ville :</label>
+      <input type="text" id="AdresseVille" formControlName="AdresseVille" name="AdresseVille">   
+      <div *ngIf="form.get('AdresseVille')?.errors">
+        {{ form.get('AdresseVille')?.errors | json }}
+      </div>
+    </div>
+
+    <div class="form-group">                  
+      <label for="AdresseNumeroBoite">Numero de boite postal :</label>
+      <input type="text" id="AdresseNumeroBoite" formControlName="AdresseNumeroBoite" name="AdresseNumeroBoite">
+      <div *ngIf="form.get('AdresseNumeroBoite')?.errors">
+        {{ form.get('AdresseNumeroBoite')?.errors | json }}
+      </div>    
+    </div>
+
+    <div class="form-group">                  
+      <label for="AdresseCountry">Pays :</label> 
+      <input type="text" id="AdresseCountry" formControlName="AdresseCountry" name="AdresseCountry">
+      <div *ngIf="form.get('AdresseCountry')?.errors">
+        {{ form.get('AdresseCountry')?.errors | json }}
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">Créer compte</button>
+    
+  </form>
+</div> 

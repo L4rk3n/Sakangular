@@ -3,6 +3,7 @@ export interface Utilisateur {
     nom: string
     prenom: string
     email: string
+    phonenumber: number
     AdresseRue: string
     AdresseNumero: number
     AdresseCodePostal: number
@@ -13,3 +14,5 @@ export interface Utilisateur {
     Activated : boolean
     Cancelled : boolean
   }
+
+  

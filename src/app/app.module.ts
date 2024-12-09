@@ -4,24 +4,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { provideHttpClient,HTTP_INTERCEPTORS, withInterceptors } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { auth2Interceptor } from './auth2.interceptor';
+import { signupComponent } from './Components/signup/signup.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-
-    
-    
-    
+    signupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
-   
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [provideHttpClient(withInterceptors([auth2Interceptor]))],  
   bootstrap: [AppComponent]

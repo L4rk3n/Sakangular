@@ -28,9 +28,12 @@ export class LoginComponent {
     if (this.form.valid) {
       this.$login.login(this.form.value as Login).subscribe({
         next: (data : Token) => {
+          this.$login.loggedInSubject.next(true);
           localStorage.setItem('token', data.token);}     
       });
-      this.router.navigate(['/newsletter']);
+
+    this.router.navigate(['/']);
+
     }
   }
 }
