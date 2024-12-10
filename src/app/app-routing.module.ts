@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './Components/Login/login.component';
 import { AuthGuard } from './auth.guard';
 import { signupComponent } from './Components/signup/signup.component';
+import { UpdatepasswordComponent } from './Components/updatepassword/updatepassword.component';
 
 
 
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'newsletter', loadChildren: () => import('./Components/newsletter/newsletter.module').then(m => m.NewsletterModule) },
   { path: 'signup',component : signupComponent},
   { path: 'login',component : LoginComponent},
+  {path: 'changepassword',component : UpdatepasswordComponent},
   { path: '', redirectTo: '/newsletter', pathMatch: 'full' }
 ];
 

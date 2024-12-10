@@ -7,13 +7,17 @@ import { provideHttpClient,HTTP_INTERCEPTORS, withInterceptors } from '@angular/
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { auth2Interceptor } from './auth2.interceptor';
 import { signupComponent } from './Components/signup/signup.component';
+import { UpdatepasswordComponent } from './Components/updatepassword/updatepassword.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    signupComponent
+    signupComponent,
+    UpdatepasswordComponent
+    
   ],
   imports: [
     BrowserModule,
