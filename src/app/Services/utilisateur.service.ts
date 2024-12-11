@@ -19,7 +19,7 @@ export class UtilisateurService {
     }
   getUtilisateur(id : number): Observable<UpdateUtilisateur> 
     {
-      return this.http.get<UpdateUtilisateur>(`${this.apiUrl}/${id}`);
+      return this.http.get<UpdateUtilisateur>(`${this.apiUrl}/byUtilisateur/${id}`);
     }
   updateUtilisateur(id:number,Utilisateur: UpdateUtilisateur): Observable<UpdateUtilisateur> 
     {
