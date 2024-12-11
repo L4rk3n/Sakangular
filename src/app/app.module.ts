@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { auth2Interceptor } from './auth2.interceptor';
 import { signupComponent } from './Components/signup/signup.component';
 import { UpdatepasswordComponent } from './Components/updatepassword/updatepassword.component';
+import { UpdateprofileComponent } from './Components/updateprofile/updateprofile.component';
 
 
 
@@ -16,7 +17,8 @@ import { UpdatepasswordComponent } from './Components/updatepassword/updatepassw
     AppComponent,
     NavbarComponent,
     signupComponent,
-    UpdatepasswordComponent
+    UpdatepasswordComponent,
+    UpdateprofileComponent
     
   ],
   imports: [

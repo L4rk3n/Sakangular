@@ -13,6 +13,7 @@ export class SignUpService {
 
 
   addUtilisateurs(Utilisateur: Utilisateur):Observable<Utilisateur> {
-    return this.http.post<Utilisateur>(this.apiUrl, Utilisateur);
+    return this.http.put<Utilisateur>(this.apiUrl, Utilisateur);
   }
+  
 }

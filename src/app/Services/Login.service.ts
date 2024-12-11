@@ -61,9 +61,10 @@ export class LoginService {
 
   getUserId(): string | null {
     const token = this.getToken();
+    console.log(token);
     if (!token) return null;
     const decoded: any = jwtDecode(token);
-    return decoded.IDutilisateur || null;
+    return decoded.IdUtilisateur || null;
   }
 }
 

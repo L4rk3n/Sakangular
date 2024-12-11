@@ -5,6 +5,7 @@
       <li *ngIf="!isLoggedIn"><a routerLink="signup">Inscription</a></li>
       <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
       <li *ngIf="isLoggedIn"><a routerLink="/changepassword">Changer mon Mdp</a></li>
+      <li *ngIf="isLoggedIn"><a routerLink="/updateprofile">Modifier mon profile</a></li>
       <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
     </ul>
   </nav>
