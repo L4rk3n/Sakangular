@@ -14,12 +14,18 @@ export class NavbarComponent implements OnInit, OnDestroy {
   private loginSubscription: Subscription = new Subscription;
 
   constructor(private loginService: LoginService, private router: Router) {}
+
+  isAdmin: boolean = false;
+  private adminSubscription: Subscription = new Subscription; 
   
 
   ngOnInit(): void {
     // Abonnez-vous aux changements de statut de connexion
     this.loginSubscription = this.loginService.loggedIn$.subscribe(loggedIn => {
       this.isLoggedIn = loggedIn;
+      this.adminSubscription = this.loginService.admin$.subscribe(isAdmin => {
+        this.isAdmin = isAdmin;
+      })
     });
   }
 

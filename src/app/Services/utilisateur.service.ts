@@ -17,9 +17,9 @@ export class UtilisateurService {
     { 
         return this.http.put<Changepassword>(this.apiUrl+"/updatepassword", Changepassword);
     }
-  getUtilisateur(id : number): Observable<Utilisateur[]> 
+  getUtilisateur(id : number): Observable<UpdateUtilisateur> 
     {
-      return this.http.get<Utilisateur[]>(`${this.apiUrl}/${id}`);
+      return this.http.get<UpdateUtilisateur>(`${this.apiUrl}/${id}`);
     }
   updateUtilisateur(id:number,Utilisateur: UpdateUtilisateur): Observable<UpdateUtilisateur> 
     {

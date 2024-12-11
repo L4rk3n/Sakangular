@@ -10,8 +10,10 @@ import {jwtDecode} from 'jwt-decode';
 export class LoginService {
   private apiUrl = 'https://localhost:7242/api/auth';
   public loggedInSubject = new BehaviorSubject<boolean>(this.isLoggedIn());
-
   public loggedIn$ = this.loggedInSubject.asObservable();
+
+  public adminSubject = new BehaviorSubject<boolean>(this.isAdmin());
+  public admin$ = this.adminSubject.asObservable();
 
   constructor(private http: HttpClient) {}
 

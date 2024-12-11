@@ -21,18 +21,18 @@ export class UpdateprofileComponent {
   ngOnInit(): void {
     const userId = Number(this.loginService.getUserId()) || 0;
     this.utilisateurService.getUtilisateur(userId).subscribe({
-      next: (actualuser: UpdateUtilisateur[]) => {
+      next: (actualuser: UpdateUtilisateur) => {
         this.form.patchValue({
-          nom: actualuser[0].nom,
-          prenom: actualuser[0].prenom,
-          email: actualuser[0].email,
-          phonenumber: actualuser[0].phonenumber,
-          AdresseRue: actualuser[0].AdresseRue,
-          AdresseNumero: actualuser[0].AdresseNumero,
-          AdresseCodePostal: actualuser[0].AdresseCodePostal,
-          AdresseVille: actualuser[0].AdresseVille,
-          AdresseNumeroBoite: actualuser[0].AdresseNumeroBoite,
-          AdresseCountry: actualuser[0].AdresseCountry
+          nom: actualuser.nom,
+          prenom: actualuser.prenom,
+          email: actualuser.email,
+          phonenumber: actualuser.phoneNumber,
+          AdresseRue: actualuser.adresseRue,
+          AdresseNumero: actualuser.adresseNumero,
+          AdresseCodePostal: actualuser.adresseCodePostal,
+          AdresseVille: actualuser.adresseVille,
+          AdresseNumeroBoite: actualuser.adresseNumeroBoite,
+          AdresseCountry: actualuser.adresseCountry
         });
       },
       error: (err) => {
@@ -47,13 +47,13 @@ export class UpdateprofileComponent {
         nom: this.form.value.nom??'',
         prenom: this.form.value.prenom??'',
         email: this.form.value.email??'',
-        phonenumber: this.form.value.phonenumber??0,
-        AdresseRue: this.form.value.AdresseRue??'',
-        AdresseNumero: this.form.value.AdresseNumero??0,
-        AdresseCodePostal: this.form.value.AdresseCodePostal??0,
-        AdresseVille: this.form.value.AdresseVille??'',
-        AdresseNumeroBoite: this.form.value.AdresseNumeroBoite??0,
-        AdresseCountry: this.form.value.AdresseCountry??''
+        phoneNumber: this.form.value.phonenumber??0,
+        adresseRue: this.form.value.AdresseRue??'',
+        adresseNumero: this.form.value.AdresseNumero??0,
+        adresseCodePostal: this.form.value.AdresseCodePostal??0,
+        adresseVille: this.form.value.AdresseVille??'',
+        adresseNumeroBoite: this.form.value.AdresseNumeroBoite??0,
+        adresseCountry: this.form.value.AdresseCountry??''
       }
       const userId = Number(this.loginService.getUserId()) || 0;
       this.utilisateurService.updateUtilisateur(userId, utilisateur).subscribe({

@@ -5,6 +5,7 @@ import { AuthGuard } from './auth.guard';
 import { signupComponent } from './Components/signup/signup.component';
 import { UpdatepasswordComponent } from './Components/updatepassword/updatepassword.component';
 import { UpdateprofileComponent } from './Components/updateprofile/updateprofile.component';
+import { GestionaccessComponent } from './Components/gestionaccess/gestionaccess.component';
 
 
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'login',component : LoginComponent},
   {path: 'changepassword',component : UpdatepasswordComponent},
   {path: 'updateprofile',component : UpdateprofileComponent},
+  {path: 'gestionaccess',component : GestionaccessComponent},
   { path: '', redirectTo: '/newsletter', pathMatch: 'full' }
 ];
 

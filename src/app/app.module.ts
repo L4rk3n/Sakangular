@@ -9,6 +9,7 @@ import { auth2Interceptor } from './auth2.interceptor';
 import { signupComponent } from './Components/signup/signup.component';
 import { UpdatepasswordComponent } from './Components/updatepassword/updatepassword.component';
 import { UpdateprofileComponent } from './Components/updateprofile/updateprofile.component';
+import { GestionaccessComponent } from './Components/gestionaccess/gestionaccess.component';
 
 
 
@@ -18,7 +19,8 @@ import { UpdateprofileComponent } from './Components/updateprofile/updateprofile
     NavbarComponent,
     signupComponent,
     UpdatepasswordComponent,
-    UpdateprofileComponent
+    UpdateprofileComponent,
+    GestionaccessComponent
     
   ],
   imports: [
