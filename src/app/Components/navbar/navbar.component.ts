@@ -20,6 +20,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   
 
   ngOnInit(): void {
+    console.log("Je passe par ici")
     // Abonnez-vous aux changements de statut de connexion
     this.loginSubscription = this.loginService.loggedIn$.subscribe(loggedIn => {
       this.isLoggedIn = loggedIn;

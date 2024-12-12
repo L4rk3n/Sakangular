@@ -24,6 +24,7 @@ export class LoginService {
   setToken(token: string): void {
     localStorage.setItem('token', token);
     this.loggedInSubject.next(this.isLoggedIn());
+    this.adminSubject.next(this.isAdmin());
   }
 
   isLoggedIn(): boolean {
@@ -34,6 +35,7 @@ export class LoginService {
   logout(): void {
     localStorage.removeItem('token');
     this.loggedInSubject.next(this.isLoggedIn());
+    this.adminSubject.next(this.isAdmin());
   }
 
   getToken(): string | null {
@@ -42,6 +44,7 @@ export class LoginService {
 
   isAdmin(): boolean {
     const token = this.getToken();
+    
     if (!token) return false;
     const decoded: any = jwtDecode(token);
     console.log(decoded);

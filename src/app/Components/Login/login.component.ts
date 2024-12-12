@@ -6,6 +6,7 @@ import { JsonPipe } from '@angular/common';
 import { Login } from  '../../Models/Login.Model';
 import { Token } from '../../Models/Token.Model';
 import {  Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   imports : [ReactiveFormsModule,JsonPipe],
@@ -16,7 +17,7 @@ import {  Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor( private router: Router) {}
+  constructor( private router: Router,private toastr: ToastrService) {}
   
   form = floginCreate()
   $login = inject(LoginService)
@@ -27,13 +28,15 @@ export class LoginComponent {
   onSubmit(): void {
     if (this.form.valid) {
       this.$login.login(this.form.value as Login).subscribe({
-        next: (data : Token) => {
-          this.$login.loggedInSubject.next(true);
-          localStorage.setItem('token', data.token);}     
+        next: (data : Token) => { 
+          this.$login.setToken(data.token); 
+          this.toastr.success('Connexion reussie', 'ça a réussi une fois!');
+           this.router.navigate(['/']);
+        },
+        error: (err) => {
+          this.toastr.error('Erreur de connexion', 'Grosse erreur');
+        }     
       });
-
-    this.router.navigate(['/']);
-
     }
   }
 }
