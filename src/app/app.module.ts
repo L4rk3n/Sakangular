@@ -10,8 +10,11 @@ import { signupComponent } from './Components/signup/signup.component';
 import { UpdatepasswordComponent } from './Components/updatepassword/updatepassword.component';
 import { UpdateprofileComponent } from './Components/updateprofile/updateprofile.component';
 import { GestionaccessComponent } from './Components/gestionaccess/gestionaccess.component';
+ 
 
+import { provideAnimations } from '@angular/platform-browser/animations';
 
+import { provideToastr } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,11 @@ import { GestionaccessComponent } from './Components/gestionaccess/gestionaccess
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [provideHttpClient(withInterceptors([auth2Interceptor]))],  
+  providers: [provideHttpClient(withInterceptors([auth2Interceptor])), 
+  provideAnimations(), // required animations providers
+    provideToastr(), // Toastr providers
+
+],  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

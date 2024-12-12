@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     // Abonnez-vous aux changements de statut de connexion
     this.loginSubscription = this.loginService.loggedIn$.subscribe(loggedIn => {
       this.isLoggedIn = loggedIn;
-      this.adminSubscription = this.loginService.admin$.subscribe(isAdmin => {
+    this.adminSubscription = this.loginService.admin$.subscribe(isAdmin => {
         this.isAdmin = isAdmin;
       })
     });
@@ -33,6 +33,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
     // Désabonnez-vous pour éviter les fuites de mémoire
     if (this.loginSubscription) {
       this.loginSubscription.unsubscribe();
+    }
+    if (this.adminSubscription) {
+      this.adminSubscription.unsubscribe();
     }
   }
 

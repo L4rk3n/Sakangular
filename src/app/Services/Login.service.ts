@@ -44,6 +44,7 @@ export class LoginService {
     const token = this.getToken();
     if (!token) return false;
     const decoded: any = jwtDecode(token);
+    console.log(decoded);
     return decoded.isAdmin === 'true';
   }
 

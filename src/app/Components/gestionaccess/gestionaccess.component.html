@@ -1,1 +1,47 @@
-<p>gestionaccess works!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+<div class="container">
+    <h2>Liste des Accès Utilisateurs</h2>
+    <div class="filters">
+         <label> <input type="checkbox" [(ngModel)]="filterAdmin" (change)="applyFilters()"> Admin 
+        </label>
+         <label> 
+            <input type="checkbox" [(ngModel)]="filterActivated" (change)="applyFilters()"> Activé
+         </label>
+          <label> 
+            <input type="checkbox" [(ngModel)]="filterCancelled" (change)="applyFilters()"> Annulé
+         </label>
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+    <div *ngIf="!errorMessage && filteredAccessList.length > 0">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Admin</th>
+            <th>Activé</th>
+            <th>Annulé</th>
+            <th>Valider</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let access of filteredAccessList; let i = index;">
+            <td>{{ access.iDutilisateur }}</td>
+            <td>{{ access.nom }}</td>
+            <td>{{ access.prenom }}</td>         
+            <td><input type="checkbox"[checked]="access.admin" (click)="testadmin(i)"></td>
+            <td><input type="checkbox"[checked]="access.activated" (click)="testactivated(i)"></td>
+            <td><input type="checkbox"[checked]="access.cancelled" (click)="testcancelled(i)"></td>
+            <td><button (click)="update(i)">Valider Changement</button></td>
+
+         </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngIf="!errorMessage && accessList.length === 0">
+      <p>Aucun accès utilisateur trouvé.</p>
+    </div>
+  </div>
+  

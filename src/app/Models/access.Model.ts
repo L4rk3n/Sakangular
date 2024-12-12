@@ -1,8 +1,8 @@
 export interface Access {
-
+    iDutilisateur: number
     nom: string
     prenom: string
-    Admin : boolean
-    Activated : boolean
-    Cancelled : boolean
+    admin : boolean
+    activated : boolean
+    cancelled : boolean
   }
