@@ -11,14 +11,13 @@ import { GestionaccessComponent } from './Components/gestionaccess/gestionaccess
 
 const routes: Routes = [
   // { path: 'auteurs', loadChildren: () => import("./components/auteurs/author.module").then(m => m.AuthorModule),canActivate:[AuthGuard] },
-  // { path: 'livres', loadChildren: () => import('./components/livres/book.module').then(m => m.BookModule),canActivate:[AuthGuard]  },
-  // { path: 'adresses', loadChildren: () => import('./components/adresses/adresses.module').then(m => m.AdressesModule),canActivate:[AuthGuard]  },
+
   { path: 'newsletter', loadChildren: () => import('./Components/newsletter/newsletter.module').then(m => m.NewsletterModule) },
   { path: 'signup',component : signupComponent},
   { path: 'login',component : LoginComponent},
-  {path: 'changepassword',component : UpdatepasswordComponent},
-  {path: 'updateprofile',component : UpdateprofileComponent},
-  {path: 'gestionaccess',component : GestionaccessComponent},
+  { path: 'changepassword',component : UpdatepasswordComponent,canActivate:[AuthGuard]},
+  { path: 'updateprofile',component : UpdateprofileComponent,canActivate:[AuthGuard]},
+  { path: 'gestionaccess',component : GestionaccessComponent,canActivate:[AuthGuard]},
   { path: '', redirectTo: '/newsletter', pathMatch: 'full' }
 ];
 

@@ -1,11 +1,7 @@
 
-import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { passwordupdate } from './forms/updatepassword.form';
 import { UtilisateurService } from '../../Services/utilisateur.service';
-import { ReactiveFormsModule } from '@angular/forms';
-import { JsonPipe } from '@angular/common';
-import { Login } from  '../../Models/Login.Model';
-import { Token } from '../../Models/Token.Model';
 import {  Router } from '@angular/router';
 import { LoginService } from '../../Services/Login.service';
 

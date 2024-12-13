@@ -24,7 +24,6 @@ export class signupComponent {
     this.$user.addUtilisateurs(this.form.value as Utilisateur).subscribe(() => {
       this.form = createUtilisateurForm();
       this.addEvent.emit(this.form.value as Utilisateur);
-
       });
       this.router.navigate(['/']);
   }
