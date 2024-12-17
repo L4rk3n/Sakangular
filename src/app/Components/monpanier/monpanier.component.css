@@ -1,0 +1,68 @@
+.container {
+    width: 800px;
+    margin: 0 auto; /* Centre le conteneur */
+    background-color: #f9f9f9;
+    border: 5px solid rgb(241, 8, 144);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+  
+  .table-container {
+    margin-top: 2rem;
+    overflow-x: auto;
+  }
+  
+  .table-container table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 1rem; /* Ajoute de l'espacement entre les lignes */
+  }
+  
+  .table-container th,
+  .table-container td {
+    padding: 1rem; /* Augmente le padding */
+    text-align: left;
+    border-bottom: 2px solid #ccc; /* Épais pour une meilleure délimitation */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .table-container th {
+    background-color: #f50a93;
+    color: white;
+  }
+  
+  .table-container tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .table-container tr:hover {
+    background-color: #ddd;
+  }
+  
+  button {
+    display: block;
+    padding: 0.75rem 1.5rem; /* Augmente le padding horizontal */
+    background-color: rgb(43, 42, 42);
+    color: white; /* Texte en blanc */
+    border: 2px solid rgb(241, 8, 144); /* Contour rose */
+    border-radius: 4px;
+    font-size: 1.1rem; /* Augmente la taille du texte */
+    cursor: pointer;
+    margin-top: 1.5rem; /* Espace en haut du bouton */
+    transition: background-color 0.3s ease; /* Ajoute une transition */
+  }
+  
+  button:hover {
+    background-color: #696969; /* Gris plus foncé lors du survol */
+  }
+  
+  

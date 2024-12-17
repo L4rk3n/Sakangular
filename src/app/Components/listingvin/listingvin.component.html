@@ -11,6 +11,7 @@
         <option value="Effervescent">Effervescent</option>
       </select>
     </div>
+    <div *ngIf="isAdmin" class="add-wine-button"> <button (click)="redirigerVersAjoutVin()">Ajouter un vin</button> </div>
     <div *ngIf="errorMessage" class="alert alert-danger">
       {{ errorMessage }}
     </div>
@@ -30,6 +31,7 @@
             <th *ngIf="isAdmin">Empnum</th>
             <th>Prix</th>
             <th>Prix TVA</th>
+            <th> Action </th>
           </tr>
         </thead>
         <tbody>
@@ -46,6 +48,7 @@
             <td *ngIf="isAdmin">{{ vin.empnum }}</td>
             <td>{{ vin.prix }}</td>
             <td>{{ vin.prixtva }}</td>
+            <td> <button (click)="ajouterAuPanier(vin)">Ajouter au panier</button> </td>
           </tr>
         </tbody>
       </table>

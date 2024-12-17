@@ -1,0 +1,33 @@
+<div class="container">
+    <h2>Panier</h2>
+    <div class="table-container" *ngIf="panier.length > 0">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Type</th>
+            <th>Cuvée</th>
+            <th>Prix(TTC)</th>
+            <th>Quantité</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of panier">
+            <td>{{ item.vin.nom }}</td>
+            <td>{{ item.vin.type }}</td>
+            <td>{{ item.vin.cuvee }}</td>
+            <td>{{ item.vin.prixtva }}</td>
+            <td>{{ item.quantity }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="total-price"> <strong>Prix Total: </strong> {{ totalPrice }} € </div>
+      <div></div>
+      <button (click)="viderPanier()">Vider le Panier</button>
+    </div>
+    <div *ngIf="panier.length === 0">
+      <p>Votre panier est vide.</p>
+    </div>
+  </div>
+  
+  

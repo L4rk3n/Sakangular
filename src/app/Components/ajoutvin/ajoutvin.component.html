@@ -1,0 +1,49 @@
+<div class="container">
+    <h2>Ajouter un Vin</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" formControlName="nom" required>
+      </div>
+      <div class="form-group">
+        <label for="cuvee">Cuvée:</label>
+        <input type="number" id="cuvee" formControlName="cuvee" required>
+      </div>
+      <div class="form-group">
+        <label for="type">Type:</label>
+        <select id="type" formControlName="type" required>
+          <option *ngFor="let type of typesDeVin" [value]="type">{{ type }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="format">Format:</label>
+        <input type="text" id="format" formControlName="format" required>
+      </div>
+      <div class="form-group">
+        <label for="fournisseur">Fournisseur:</label>
+        <input type="text" id="fournisseur" formControlName="fournisseur" required>
+      </div>
+      <div class="form-group">
+        <label for="stock">Stock:</label>
+        <input type="number" id="stock" formControlName="stock" required>
+      </div>
+      <div class="form-group">
+        <label for="empalpha">Empalpha:</label>
+        <input type="text" id="empalpha" formControlName="empalpha" required>
+      </div>
+      <div class="form-group">
+        <label for="empnum">Empnum:</label>
+        <input type="number" id="empnum" formControlName="empnum" required>
+      </div>
+      <div class="form-group">
+        <label for="prix">Prix:</label>
+        <input type="number" id="prix" formControlName="prix" required>
+      </div>
+      <div class="form-group">
+        <label for="prixtva">Prix TVA:</label>
+        <input type="number" id="prixtva" formControlName="prixtva" required>
+      </div>
+      <button type="submit" [disabled]="form.invalid">Ajouter le Vin</button>
+    </form>
+  </div>
+  

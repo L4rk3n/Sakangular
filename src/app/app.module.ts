@@ -10,12 +10,11 @@ import { signupComponent } from './Components/signup/signup.component';
 import { UpdatepasswordComponent } from './Components/updatepassword/updatepassword.component';
 import { UpdateprofileComponent } from './Components/updateprofile/updateprofile.component';
 import { GestionaccessComponent } from './Components/gestionaccess/gestionaccess.component';
- 
-
 import { provideAnimations } from '@angular/platform-browser/animations';
-
 import { provideToastr } from 'ngx-toastr';
 import { ListingvinComponent } from './Components/listingvin/listingvin.component';
+import { AjoutvinComponent } from './Components/ajoutvin/ajoutvin.component';
+import { MonpanierComponent } from './Components/monpanier/monpanier.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,9 @@ import { ListingvinComponent } from './Components/listingvin/listingvin.componen
     UpdatepasswordComponent,
     UpdateprofileComponent,
     GestionaccessComponent,
-    ListingvinComponent
+    ListingvinComponent,
+    AjoutvinComponent,
+    MonpanierComponent
     
   ],
   imports: [
