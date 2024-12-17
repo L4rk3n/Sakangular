@@ -2,6 +2,10 @@
     <ul>
       <li><img src="assets/images/saka20.jpg" alt="SAKALOGO" ></li>
       <li><a routerLink="/newsletter">Sakanews</a></li>
+      <li *ngIf="isLoggedIn"><a routerLink="/listingvin">Vins</a></li>
+      <li></li>
+      <li>----------------</li>
+      <li></li>
       <li *ngIf="!isLoggedIn"><a routerLink="signup">Inscription</a></li>
       <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
       <li *ngIf="isLoggedIn"><a routerLink="/changepassword">Changer mon Mdp</a></li>

@@ -1,0 +1,77 @@
+.container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f9f9f9;
+    border: 5px solid rgb(241, 8, 144);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    text-align: center;
+    color: #333;
+}
+
+.container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.container th,
+.container td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.container th {
+    background-color: #f50a93;
+    color: white;
+}
+
+.container tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.container tr:hover {
+    background-color: #ddd;
+}
+
+.container .alert {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+}
+
+.container .alert.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.container .alert.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+button {
+    display: block;
+    padding: 0.75rem;
+    background-color: rgb(43, 42, 42);
+    color: white; /* Texte en blanc */
+    border: 2px solid rgb(241, 8, 144); /* Contour rose */
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: #696969; /* Gris plus foncé lors du survol */
+}

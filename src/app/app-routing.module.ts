@@ -6,6 +6,7 @@ import { signupComponent } from './Components/signup/signup.component';
 import { UpdatepasswordComponent } from './Components/updatepassword/updatepassword.component';
 import { UpdateprofileComponent } from './Components/updateprofile/updateprofile.component';
 import { GestionaccessComponent } from './Components/gestionaccess/gestionaccess.component';
+import { ListingvinComponent } from './Components/listingvin/listingvin.component';
 
 
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'changepassword',component : UpdatepasswordComponent,canActivate:[AuthGuard]},
   { path: 'updateprofile',component : UpdateprofileComponent,canActivate:[AuthGuard]},
   { path: 'gestionaccess',component : GestionaccessComponent,canActivate:[AuthGuard]},
+  { path: 'listingvin',component : ListingvinComponent,canActivate:[AuthGuard]},
   { path: '', redirectTo: '/newsletter', pathMatch: 'full' }
 ];
 

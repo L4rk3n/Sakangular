@@ -1,0 +1,61 @@
+<div class="container">
+    <h2>Liste des Vins</h2>
+    <div class="filters">
+      <label for="wine-type">Choisissez un type de vin:</label>
+      <select id="wine-type" [(ngModel)]="selectedType" (change)="applyFilters()">
+        <option value="">Tous</option>
+        <option value="Rouge">Rouge</option>
+        <option value="Blanc">Blanc</option>
+        <option value="Rosé">Rosé</option>
+        <option value="Jaune">Jaune</option>
+        <option value="Effervescent">Effervescent</option>
+      </select>
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+    <div *ngIf="!errorMessage && filteredVins.length > 0">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Type</th>
+            <th>Cuvée</th>
+            <th>Format</th>
+            <th>Fournisseur</th>
+            <th *ngIf="isAdmin">Disponible</th>
+            <th>Stock</th>
+            <th *ngIf="isAdmin">Empalpha</th>
+            <th *ngIf="isAdmin">Empnum</th>
+            <th>Prix</th>
+            <th>Prix TVA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let vin of filteredVins">
+            <td>{{ vin.idvin }}</td>
+            <td>{{ vin.nom }}</td>
+            <td>{{ vin.type }}</td>
+            <td>{{ vin.cuvee }}</td>
+            <td>{{ vin.format }}</td>
+            <td>{{ vin.fournisseur }}</td>
+            <td *ngIf="isAdmin">{{ vin.disponible ? 'Oui' : 'Non' }}</td>
+            <td>{{ vin.stock }}</td>
+            <td *ngIf="isAdmin">{{ vin.empalpha }}</td>
+            <td *ngIf="isAdmin">{{ vin.empnum }}</td>
+            <td>{{ vin.prix }}</td>
+            <td>{{ vin.prixtva }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngIf="!errorMessage && vins.length === 0">
+      <p>Aucun vin trouvé.</p>
+    </div>
+  </div>
+  
+  
+  
+  
+  

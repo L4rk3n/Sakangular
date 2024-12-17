@@ -15,6 +15,7 @@ import { GestionaccessComponent } from './Components/gestionaccess/gestionaccess
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 import { provideToastr } from 'ngx-toastr';
+import { ListingvinComponent } from './Components/listingvin/listingvin.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { provideToastr } from 'ngx-toastr';
     signupComponent,
     UpdatepasswordComponent,
     UpdateprofileComponent,
-    GestionaccessComponent
+    GestionaccessComponent,
+    ListingvinComponent
     
   ],
   imports: [

@@ -56,7 +56,5 @@ export class GestionaccessComponent implements OnInit{
     this.AdminService.putAccess(this.accessList[index].iDutilisateur, toUpdate).subscribe({
       next: () => {   this.toastr.success('Accès Mis à jour', 'ça a réussi une fois!');}
     });
-  }
-
-    
+  }    
 }
