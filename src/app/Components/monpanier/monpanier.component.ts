@@ -27,6 +27,17 @@ export class MonpanierComponent {
        return total + item.vin.prixtva * item.quantity;
      }, 0);
   }
+  diminuerQuantite(vin: Vin) {
+    this.panierService.diminuerQuantite(vin);
+    this.panier = this.panierService.getPanier();
+    this.calculateTotalPrice();
+  } 
+  
+  augmenterQuantite(vin: Vin) {
+    this.panierService.augmenterQuantite(vin);
+    this.panier = this.panierService.getPanier();
+     this.calculateTotalPrice();
+    }
 
 }
 

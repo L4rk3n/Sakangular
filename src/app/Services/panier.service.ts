@@ -16,6 +16,22 @@ export class PanierService {
     }
   }
 
+  diminuerQuantite(vin: Vin) {
+    const index = this.panier.findIndex(item => item.vin.idvin === vin.idvin);
+    if (index !== -1) {
+         this.panier[index].quantity -= 1;
+          if (this.panier[index].quantity <= 0) {
+             this.panier.splice(index, 1); // Retirer la ligne si la quantité tombe à zéro
+            }
+        } 
+    } 
+  augmenterQuantite(vin: Vin) {
+    const index = this.panier.findIndex(item => item.vin.idvin === vin.idvin);
+    if (index !== -1) { this.panier[index].quantity += 1;
+
+    }
+  }
+
   getPanier() {
     return this.panier;
   }

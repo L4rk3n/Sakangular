@@ -9,6 +9,7 @@
             <th>Cuvée</th>
             <th>Prix(TTC)</th>
             <th>Quantité</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -18,6 +19,10 @@
             <td>{{ item.vin.cuvee }}</td>
             <td>{{ item.vin.prixtva }}</td>
             <td>{{ item.quantity }}</td>
+            <td>
+                <button (click)="diminuerQuantite(item.vin)">-</button>
+                <button (click)="augmenterQuantite(item.vin)">+</button>
+            </td>
           </tr>
         </tbody>
       </table>
